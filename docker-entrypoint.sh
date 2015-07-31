@@ -15,6 +15,9 @@ if [ "$1" = 'elasticsearch' ]; then
       -e "s#-ELASTICSEARCH_DATA-#${ELASTICSEARCH_DATA}#" \
       -e "s#-ELASTICSEARCH_LOG-#${ELASTICSEARCH_LOG}#" \
       /elasticsearch/config/elasticsearch.yml
+    if [ -n "$ELASTICSEARCH_YML_APPEND" ]; then
+      (echo; echo "$ELASTICSEARCH_YML_APPEND") >> /elasticsearch/config/elasticsearch.yml
+    fi
   fi
 
   # SETUP

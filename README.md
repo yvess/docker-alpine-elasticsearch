@@ -1,5 +1,4 @@
-Alpine Elasticsearch Docker image
-=================================
+# Alpine Elasticsearch Docker image
 
 This image is based on Alpine Linux image. It uses the small footprint [develar/java](https://registry.hub.docker.com/u/develar/java/)
 as java runtime.
@@ -7,11 +6,18 @@ as java runtime.
 [![](https://badge.imagelayers.io/yvess/alpine-elasticsearch:latest.svg)](https://imagelayers.io/?images=yvess/alpine-elasticsearch:latest 'Get your own badge on imagelayers.io')
 
 
-Usage
------
+## Usage
 
-This image is ideal for usage with an extra data volume.
+This image is ideal for usage with an optional data volume, but you don't need to.
 The default data volume path used is `/var/services`.
+
+All variables have sane defaults, so you just can run it with:
+
+```
+docker run -p 9200:9200 -p 9300:9300 yvess/alpine-elasticsearch
+```
+
+### docker-compose.yml
 
 With the optional variable `ELASTICSEARCH_YML_APPEND` you can append custom stuff
 to the `elasticsearch.yml` file. This can be anything you want.

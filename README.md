@@ -18,7 +18,7 @@ to the `elasticsearch.yml` file. This can be anything you want.
 
 Here is how to use it in the `docker-compose.yml` file:
 
-```yaml
+```
 elasticsearch:
   image: yvess/alpine-elasticsearch:latest
   hostname: elasticsearch
